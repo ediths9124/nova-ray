@@ -1,0 +1,64 @@
+.artist-section {
+  border-top: 1px solid var(--hairline);
+  overflow: hidden;
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 6vw, 4rem);
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+.artist-portrait-main {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.artist-portrait-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artist-supporting {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.artist-supporting img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.artist-copy h2 {
+  font-size: var(--step-xl);
+  max-width: 10ch;
+}
+
+.artist-bio p {
+  margin-top: 1.4rem;
+  color: var(--mist);
+  line-height: 1.75;
+  max-width: 54ch;
+}
+
+.artist-bio p:first-child {
+  margin-top: 1.8rem;
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--step-md);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .artist-grid {
+    grid-template-columns: 1fr;
+  }
+}

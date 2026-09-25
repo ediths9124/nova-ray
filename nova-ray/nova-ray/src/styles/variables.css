@@ -1,0 +1,46 @@
+:root {
+  /* Color — black / charcoal / silver / deep blue, one signal accent */
+  --void: #07080a;
+  --charcoal: #131318;
+  --charcoal-raised: #1b1c22;
+  --hairline: rgba(243, 242, 238, 0.12);
+  --hairline-strong: rgba(243, 242, 238, 0.22);
+  --paper: #f3f2ee;
+  --mist: #9aa0ac;
+  --mist-dim: #6b7078;
+  --deep-blue: #1d2c4e;
+  --signal: #8ea3d1;
+  --signal-dim: rgba(142, 163, 209, 0.35);
+
+  /* Type */
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-ui: "Space Grotesk", "Inter", sans-serif;
+
+  /* Scale */
+  --step-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.85rem);
+  --step-sm: clamp(0.9rem, 0.86rem + 0.2vw, 1rem);
+  --step-base: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-md: clamp(1.25rem, 1.15rem + 0.5vw, 1.6rem);
+  --step-lg: clamp(1.8rem, 1.5rem + 1.5vw, 2.6rem);
+  --step-xl: clamp(2.6rem, 2rem + 3vw, 4.2rem);
+  --step-hero: clamp(3rem, 1.6rem + 7vw, 7.5rem);
+
+  /* Layout */
+  --container: 1240px;
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --radius: 2px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

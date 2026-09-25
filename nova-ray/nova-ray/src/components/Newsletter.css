@@ -1,0 +1,61 @@
+.newsletter {
+  border-top: 1px solid var(--hairline);
+  text-align: center;
+  position: relative;
+}
+
+.newsletter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(142, 163, 209, 0.1),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.newsletter-inner {
+  position: relative;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.newsletter h2 {
+  font-size: var(--step-xl);
+}
+
+.newsletter p {
+  margin-top: 1rem;
+  color: var(--mist);
+}
+
+.newsletter-form {
+  margin-top: 2.2rem;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 220px;
+  background: transparent;
+  border: 1px solid var(--hairline-strong);
+  color: var(--paper);
+  padding: 0.95rem 1.2rem;
+  font-size: var(--step-sm);
+  border-radius: var(--radius);
+}
+
+.newsletter-form input:focus-visible {
+  border-color: var(--signal);
+}
+
+.newsletter-status {
+  margin-top: 1rem;
+  color: var(--signal);
+  font-size: var(--step-xs);
+}

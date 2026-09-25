@@ -1,0 +1,236 @@
+.player {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 55;
+  background: rgba(19, 19, 24, 0.92);
+  backdrop-filter: blur(18px);
+  border-top: 1px solid var(--hairline);
+  transition: transform 0.5s var(--ease);
+}
+
+.player-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem var(--gutter);
+}
+
+.player-track {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.player-cover {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--hairline);
+}
+
+.player-track-meta {
+  min-width: 0;
+}
+
+.player-track-title {
+  font-size: var(--step-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-track-artist {
+  font-size: var(--step-xs);
+  color: var(--mist);
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.player-controls button {
+  background: none;
+  border: none;
+  color: var(--paper);
+  font-size: 1rem;
+  padding: 0.3rem;
+  display: flex;
+}
+
+.player-controls button:hover {
+  color: var(--signal);
+}
+
+.player-play {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-progress-wrap {
+  display: none;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--mist-dim);
+  font-size: var(--step-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.player-progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: var(--hairline-strong);
+  border-radius: 2px;
+}
+
+.player-progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--signal);
+  cursor: pointer;
+}
+
+.player-progress::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: none;
+  background: var(--signal);
+  cursor: pointer;
+}
+
+.player-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.player-volume {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--mist);
+}
+
+.player-volume input[type="range"] {
+  width: 80px;
+  accent-color: var(--signal);
+}
+
+.player-queue-toggle {
+  background: none;
+  border: 1px solid var(--hairline);
+  color: var(--paper);
+  font-size: var(--step-xs);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius);
+}
+
+.player-queue-toggle:hover {
+  border-color: var(--signal);
+}
+
+.player-eq {
+  color: var(--signal);
+}
+
+.player-queue {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s var(--ease);
+  border-top: 1px solid transparent;
+}
+
+.player-queue.open {
+  max-height: 320px;
+  overflow-y: auto;
+  border-color: var(--hairline);
+}
+
+.player-queue ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem var(--gutter) 1rem;
+}
+
+.player-queue li {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.player-queue li:last-child {
+  border-bottom: none;
+}
+
+.player-queue button {
+  background: none;
+  border: none;
+  color: var(--mist);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  text-align: left;
+  font-size: var(--step-sm);
+  padding: 0.2rem 0;
+}
+
+.player-queue button:hover {
+  color: var(--paper);
+}
+
+.player-queue li.active button {
+  color: var(--signal);
+}
+
+.player-queue-cover {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--hairline);
+}
+
+.player-queue-duration {
+  margin-left: auto;
+  font-size: var(--step-xs);
+  color: var(--mist-dim);
+}
+
+@media (min-width: 700px) {
+  .player-progress-wrap {
+    display: flex;
+    width: 100%;
+  }
+  .player-volume {
+    display: flex;
+  }
+}
+
+@media (max-width: 699px) {
+  .player-main {
+    grid-template-columns: 1fr auto;
+  }
+  .player-right .player-queue-toggle span.label {
+    display: none;
+  }
+}

@@ -1,0 +1,95 @@
+.contact-section {
+  border-top: 1px solid var(--hairline);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  margin-top: 2.5rem;
+}
+
+.contact-intro h2 {
+  font-size: var(--step-xl);
+  max-width: 9ch;
+}
+
+.contact-intro p {
+  margin-top: 1.2rem;
+  color: var(--mist);
+  max-width: 40ch;
+}
+
+.contact-socials {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.contact-socials a {
+  font-size: var(--step-xs);
+  color: var(--mist);
+  border-bottom: 1px solid var(--hairline-strong);
+  padding-bottom: 3px;
+}
+
+.contact-socials a:hover {
+  color: var(--signal);
+  border-color: var(--signal);
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.contact-form .full {
+  grid-column: 1 / -1;
+}
+
+.contact-form label {
+  display: block;
+  font-size: var(--step-xs);
+  color: var(--mist);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--hairline-strong);
+  color: var(--paper);
+  padding: 0.7rem 0;
+  font-size: var(--step-sm);
+  font-family: inherit;
+  resize: vertical;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: none;
+  border-color: var(--signal);
+}
+
+.contact-submit {
+  grid-column: 1 / -1;
+  margin-top: 0.8rem;
+  justify-self: start;
+}
+
+.contact-status {
+  grid-column: 1 / -1;
+  color: var(--signal);
+  font-size: var(--step-xs);
+}
+
+@media (max-width: 860px) {
+  .contact-grid,
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+}
